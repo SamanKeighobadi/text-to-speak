@@ -1,46 +1,75 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
 }
-:root{
-    --background: #87acd8;
-    --primaryColor : #2f6f95;
-    --secondaryColor: #e9ebfa;
-    --font: sans-serif
+:root {
+  --background: #87acd8;
+  --primaryColor: #2f6f95;
+  --secondaryColor: #e9ebfa;
+  --font: sans-serif;
 }
-body{
-    background: var(--background);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    caret-color: var(--primaryColor);
+body {
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  caret-color: var(--primaryColor);
 }
-button{
-    padding: 5px 1rem ;
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-    background: var(--primaryColor);
-    color:var(--secondaryColor)
+
+button {
+  padding: 5px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 1rem 0 0 9px;
+  background: var(--primaryColor);
+  color: var(--secondaryColor);
 }
 #text-input {
-    border: none;
-    outline: none;
-    border-radius: 2px;
-    margin: 10px 0;
-    background: var(--secondaryColor);
-    padding: 2px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  margin: 10px 0;
+  background: var(--secondaryColor);
+  padding: 2px;
+  width: 100%;
 }
-select{
-    border: none;
-    outline: none;
-    background: var(--secondaryColor);
-    color: var(--primaryColor);
-    border-radius: 3px;
-    padding: 3px;
-    margin: 10px;
+select {
+  border: none;
+  outline: none;
+  background: var(--secondaryColor);
+  color: var(--primaryColor);
+  border-radius: 3px;
+  padding: 3px;
+  margin: 10px;
+  width: 100%;
+}
+label {
+  color: var(--secondaryColor);
+  margin: 5px 0;
+  font-size: large;
+  font-weight: bold;
+}
+input[type="range"] {
+  width: 100%;
+  border: none;
+  margin: 1rem 0;
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+#rate-value,
+#pitch-value {
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 5%;
+  border-radius: 5px;
+  float: right;
+}
+#rate-value,
+#pitch-value > span {
+  padding: 2px 4px;
+  color: var(--secondaryColor);
 }
