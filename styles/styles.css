@@ -1,15 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font);
-}
 :root {
   --background: #87acd8;
   --primaryColor: #2f6f95;
   --secondaryColor: #e9ebfa;
   --font: sans-serif;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
 body {
   background: var(--background);
   display: flex;
@@ -17,7 +18,9 @@ body {
   text-align: center;
   caret-color: var(--primaryColor);
 }
-
+.container {
+  margin-top: 2rem;
+}
 button {
   padding: 5px;
   width: 100%;
@@ -27,6 +30,7 @@ button {
   margin: 1rem 0 0 9px;
   background: var(--primaryColor);
   color: var(--secondaryColor);
+  cursor: pointer;
 }
 #text-input {
   border: none;
@@ -60,6 +64,7 @@ input[type="range"] {
   color: var(--primaryColor);
   cursor: pointer;
 }
+
 #rate-value,
 #pitch-value {
   font-size: 0.7rem;
