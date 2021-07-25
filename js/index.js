@@ -48,14 +48,17 @@ const speak = () => {
       console.log("Something went Wrong");
     };
 
-    // const selectedVoices =
-    //   voiceSelector.selectedOptions[0].getAttribuite("data-name");
+    
+     //* Selected voice
+     const selectedVoice = voiceSelector.selectedOptions[0].getAttribute(
+      'data-name'
+    );
 
-    // voices.forEach((voice) => {
-    //   if (voice.name === selectedVoices) {
-    //     speakText.voice = voice;
-    //   }
-    // });
+    voices.forEach(voice => {
+      if (voice.name === selectedVoice) {
+        speakText.voice = voice;
+      }
+    });
     //* Set Rate and Pitch
     speakText.rate = rate.value;
     speakText.pitch = pitch.value;
@@ -79,3 +82,5 @@ rate.addEventListener("change", (e) => (rateInput.textContent = rate.value));
 pitch.addEventListener("change", (e) => (pitchInput.textContent = pitch.value));
 //* Set Change Speak
 voiceSelector.addEventListener('change',e => speak())
+
+
