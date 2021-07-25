@@ -1,5 +1,6 @@
 const speech = speechSynthesis;
 
+//* Select DOM Elemetn
 const form = document.querySelector("form");
 const textInput = document.querySelector("#text-input");
 const rate = document.querySelector("#rate");
@@ -8,8 +9,8 @@ const pitch = document.querySelector("#pitch");
 const pitchInput = document.querySelector("#pitch-value");
 const voiceSelector = document.querySelector("#voice-select");
 
+//* Get Voices
 let voices = [];
-
 const getVoices = () => {
   voices = speech.getVoices();
 
@@ -29,6 +30,7 @@ if (speech.onvoiceschanged !== undefined) {
   speech.onvoiceschanged = getVoices;
 }
 
+//* Speak function
 const speak = () => {
   if (speech.speaking) {
     console.error("Already Speaking ...");
@@ -37,6 +39,7 @@ const speak = () => {
   if (textInput.value) {
     const speakText = new SpeechSynthesisUtterance(textInput.value);
 
+    //* handle Unexpected Errors
     speakText.onend = (e) => {
       console.log("Done Speaking...");
     };
@@ -53,22 +56,26 @@ const speak = () => {
     //     speakText.voice = voice;
     //   }
     // });
-
+    //* Set Rate and Pitch
     speakText.rate = rate.value;
     speakText.pitch = pitch.value;
-
+    //* start speak
     speech.speak(speakText);
   }
 };
 
+//! Event Listener
+
+//* submit form and preventDefault
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   speak();
   textInput.blur();
 });
 
+//* Set change Rate
 rate.addEventListener("change", (e) => (rateInput.textContent = rate.value));
-
+//* Set change Pitch
 pitch.addEventListener("change", (e) => (pitchInput.textContent = pitch.value));
-
+//* Set Change Speak
 voiceSelector.addEventListener('change',e => speak())
